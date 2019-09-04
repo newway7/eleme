@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,user-scalable='no'"><link rel=stylesheet href=./style/reset.css><script>(function (doc, win) { //修改旋转状态下字体大小
+      var docEl = doc.documentElement,
+        resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          console.log(clientWidth)
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+          console.log('docEl.style.fontSize'+docEl.style.fontSize)
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false); //false冒泡阶段，true捕获
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+      //当初始的 HTML 文档被完全加载和解析完成之后，
+      //DOMContentLoaded 事件被触发，而无需等待样式表、图像和子框架的完成加载。
+    })(document, window);</script><title>hello-test</title><link href=css/app.c111ab32.css rel=preload as=style><link href=js/app.2ceeaa99.js rel=preload as=script><link href=js/chunk-vendors.575b65a8.js rel=preload as=script><link href=css/app.c111ab32.css rel=stylesheet></head><body><div id=app></div><script src=js/chunk-vendors.575b65a8.js></script><script src=js/app.2ceeaa99.js></script></body></html>
